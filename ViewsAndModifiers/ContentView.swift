@@ -8,9 +8,25 @@
 
 import SwiftUI
 
+struct BigTitle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.system(size: 50))
+    }
+    
+}
+
+extension View {
+    func bigTitleStyle() -> some View {
+        self.modifier(BigTitle())
+    }
+}
+
 struct ContentView: View {
     var body: some View {
         Text("Hello, World!")
+            .bigTitleStyle()
+            
     }
 }
 
